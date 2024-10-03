@@ -46,7 +46,7 @@ quiz_data = [
         "correct_option": 1
     },
     {
-        "question": "",
+        "quetion": "",
         "options": [],
         "correct_option":
     },
