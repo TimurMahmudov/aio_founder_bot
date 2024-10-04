@@ -22,7 +22,7 @@ async def right_answer(callback: types.CallbackQuery):
         )
     }
     await callback.message.answer(options_answer.get(F.data))
-    if F.data == "right_answer":
+    if callback.data == "right_answer":
         await update_count_right_answers(callback.from_user.id)
     current_question_index += 1
     await update_quiz_index(callback.from_user.id, current_question_index)
