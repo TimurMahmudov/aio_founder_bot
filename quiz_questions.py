@@ -45,14 +45,15 @@ quiz_data = [
         "options": [-1, None, KeyError],
         "correct_option": 1
     },
-    {
-        "quetion": "",
-        "options": [],
-        "correct_option":
-    },
-    {
-        "question": "",
-        "options": [],
-        "correct_option":
-    },
+#    {
+#
+#        "quetion": "",
+#        "options": [],
+#        "correct_option":
+#    }
+#    {
+#        "question": "",
+#        "options": [],
+#        "correct_option":
+#    },
 ]
