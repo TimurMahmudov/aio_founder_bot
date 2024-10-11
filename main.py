@@ -9,6 +9,7 @@ from create_db_responses import create_table
 from quiz import new_quiz
 from config import API_TOKEN
 from callbacks_answers import router
+from statistics_users import get_results
 
 # nest_asyncio.apply()
 
@@ -35,6 +36,19 @@ async def cmd_start(message: types.Message):
 async def cmd_quiz(message: types.Message):
     await message.answer("Давайте начнём игру quiz!")
     await new_quiz(message)
+
+
+@dp.message(F.text == "statistic")
+async def statistic_message(message: types.Message):
+    results = await get_results(message.from_user.id)
+    answer = '\n'.join(
+        [f"Количество игроков: {results['count_players']}",
+         f"Решивших все задания правильно: {results['all_quests']}",
+         f"Решенных вами задач: {results['count_quest']}",
+         f"Процент правильно решенных задач: {results['percent_right_answers']}",
+         f"Количество правильно решенных задач: {results['right_answers']}"]
+    )
+    await message.answer(answer)
 
 
 async def main():
